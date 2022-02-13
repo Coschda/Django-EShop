@@ -65,5 +65,5 @@ def newsletter(request):
         else:
             new_mail = Mails.objects.create(mail=mail)
             new_mail.save()
-            messages.success(request, "Mail bien ajouté à la liste.")
+            messages.success(request, "E-Mail ajouté à la liste.")
             return redirect('/')
