@@ -76,7 +76,16 @@
 
             <div class="form-outline form-white mb-4">
               <input type="email" name="mairu" id="form5Example21" class="form-control" oninput="EmailCheck(this.value)" required />
-              <div id="form5Example21label"></div><br>
+              
+              {% for message in messages %}
+              {% if message.tags == "warning" %}
+              <div id="form5Example21label" style="color:red;">{{message}}</div><br>
+              {% else %}
+              <div id="form5Example21label" style="color:green;">{{message}}</div><br>
+              {%endif%}
+              {%endfor%}
+              
+              
               <label class="form-label" for="form5Example21">Email address</label>
             </div>
           </div>
