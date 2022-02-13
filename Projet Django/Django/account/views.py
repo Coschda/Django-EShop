@@ -57,11 +57,13 @@ def deconnexion(request):
     return redirect('/')
 
 def newsletter(request):
-    regex = r'/([^\w!\&+@-Z.]+)/'
     if request.method=="POST":
-        if re.search(regex, request.POST["mairu"]) != None:
+        mail = request.POST['mairu']
+        if Mails.objects.filter(mail=mail).exists():
+            messages.warning(request, 'Mail déjà dans la liste.')
             return redirect('/')
         else:
-            return redirect('connexion')
-    else:
-        return redirect('/')
+            new_mail = Mails.objects.create(mail=mail)
+            new_mail.save()
+            messages.success(request, "Mail bien ajouté à la liste.")
+            return redirect('/')
