@@ -1,0 +1,67 @@
+{% load static %}
+
+<!-- <link rel="stylesheet" href="{% static 'articles/article.css' %}" -->
+
+<style>
+.logo{
+    width : 75px;
+    height : 50px;
+    text-align: center;
+    float: left;
+    margin: 0 15px 15px;
+}
+.parent{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.enfant{
+    margin:10px 50px 10px 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    background-image: url('data:image/jpeg;base64,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');
+}
+h4{
+    margin: 10px 10px 10px 0px;
+    padding: 0px 0px 0px 20px;
+}
+
+.prixnote{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.artimage{
+    margin: 20px 0px 20px 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+
+#prix{
+    padding: 0px 0px 10px 20px;
+}
+</style>
+
+<h1>Articles :</h1>
+<h2>Plus jamais je fais de HTML et CSS démerdez vous la prochaine fois</h2>
+<div class="parent">
+  {% for article in articles %}
+  <div class="enfant">
+    <a href="articles/{{article.id}}"style="text-decoration: none; color:black;">
+
+      <img height=200 width=200 class="artimage" src="{{article.img}}">
+      <h4>{{article.nom}}</h4>
+      <div class="prixnote">
+        <div id="prix">{{article.prix}}€</div>
+        <div id="note">{{article.note}}/5</div>
+      </div>
+
+    </a>
+  </div>  
+  {% endfor %}
+</div>

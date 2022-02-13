@@ -1,0 +1,16 @@
+{% load static %}
+
+<!--{{article.img}} = static/images/nom-->
+
+<style>
+    .artimage{
+    display: block;
+    border-radius: 8px;
+}
+</style>
+
+<img height=200 width=200 class="artimage" src="/{{art.img}}">
+<div>Nom : {{art.nom}}</div>
+<div>Prix : {{art.prix}}</div>
+<div>Note : {{art.note}}</div>
+<div>Description : {{art.description}}</div>

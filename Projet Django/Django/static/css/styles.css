@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap%27');
+body{
+  background-color: #141414;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  width: auto;
+}
+body .logo{
+
+    background: url('images/logo_small_icon_only_inverted.png');
+    color: #E45523;
+}
+#bloc_page
+{
+    margin: auto;
+}
+body{
+  background-image: url('images/logo_white_large.png');
+} 
+
+/* Barre de navigation */
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  position:sticky;
+  top: 0;
+  background-color: #141414;
+  padding: 15px 10px 1px;
+  /* background-repeat:repeat-x; */
+}
+nav .onglets{
+  display:flex;
+  flex-wrap:wrap;
+  margin-top: 5px;
+  color: #CACFD2;
+  justify-content: flex-start;
+}
+nav .onglets{
+  display:flex;
+  flex-wrap:wrap;
+}
+nav .onglets a {
+  margin-right: 20px;
+  cursor:pointer;
+  margin-left: 1%;
+  margin-top: 7px;
+  color: #CACFD2;
+}
+nav .buttons button{
+  padding: 13px 20px;
+  color: #fff;
+  border:none;
+  font-size: 15px;
+  cursor:pointer;
+  outline:none;
+
+}
+nav .buttons .login{
+  background-color: #141414;
+  margin-right: 10px;
+  color: #fff;
+}
+nav .buttons .register{
+  background-color: #C0392B;
+}
+/* #panier{
+
+} */
+/* Fin de la barre de navigation */
+
+/* Header */
+header{
+  margin-top: 40px;
+
+  background-repeat: no-repeat;
+  background-size: 400px 400px;
+  background-position: center;
+}
+header h1{
+  text-align:center;
+  font-size: 60px;
+  padding: 150px;
+  transition: transform 2.5s;
+}
+
+/* Fin du header */
+footer{
+  background-color: #1a1a1a;
+  padding: 25px 100px;
+  color:#828282;
+}
+footer .colonnes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* Fin du pied de page */
+
+@media screen and (max-width: 640px){
+  body .page{
+    margin: 10px;
+  }
+  nav .onglets{
+    display:none;
+    text-align: center;
+  }
+  header{
+    margin-top: 20px;
+    background-size: 250px 250px;
+  }
+  header h1{
+    font-size: 30px;
+    padding: 100px;
+  }
+}
+.logo{
+    width : 50px;
+    text-align: center;
+    float: left;
+    margin: 0 15px 15px;
+}
+.buttons{
+    text-align: right;
+    margin-top: -1.7%;
+    margin-right: 10px;
+}
+#form5Example21:focus{
+  outline: none;
+}
+#form5Example21label{
+  position:absolute;
+  color:red;
+}

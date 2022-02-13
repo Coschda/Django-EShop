@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE HTML5>
+	<html>
+	<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/logo_small_icon_only.png' %}" />
+    <!link rel="icon" type="image/jpg" href="{% static 'static/images/logo_large.jpg' %}">
+    <meta charset="UTF-8">
+		<title>Accueil</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		</head>
+
+	<body>
+    <section class="page">
+     <nav>
+       <div id="bloc_page">
+          <a href=""><img class="logo"src="{% static 'images\logo_small_icon_only_inverted.png' %}" alt="Logo_page"></img></a>
+         </div>
+      <div class="onglets">
+        <a>Rechercher</a>
+        <a>Achats recents</a>
+        <a id="panier" href="panier">Panier</a>
+      </div>
+
+      <div class="buttons">
+        <form>
+          {% if user.is_authenticated %}
+          <button class="register" formaction="deconnexion">Logout</button>
+          {% else %}
+          <button formaction="connexion" class="login">Connectez-vous</button>
+          <button formaction="inscrire" class="register">Inscrivez-vous</button>
+          {% endif %}
+        </form>
+      </div>
+     </nav>
+		<header>
+      {% if user.is_authenticated %}
+      <h1>Bienvenue, {{user.username}} !</h1>
+      {% else %}
+      <h1>Contre les virus soignez-vous !</h1>
+      {% endif %}
+          <div id="log"></div>
+    </header>
+
+  </section>
+
+
+
+    <footer class="bg-dark text-center text-white">
+    <section class="mb-4">
+
+      {% for article in home_articles %}
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i></a>
+      {% endfor %}
+
+    </div>
+
+      </section>
+
+
+    <section class="">
+      <form method="POST" action="newsletter">
+        {% csrf_token %}
+
+        <div class="row d-flex justify-content-center">
+
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+
+
+          <div class="col-md-5 col-12">
+
+            <div class="form-outline form-white mb-4">
+              <input type="email" name="mairu" id="form5Example21" class="form-control" oninput="EmailCheck(this.value)" required />
+              <div id="form5Example21label"></div><br>
+              <label class="form-label" for="form5Example21">Email address</label>
+            </div>
+          </div>
+
+
+          <div class="col-auto">
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </form>
+    </section>
+
+
+    <section class="mb-4">
+      <p>
+        Crée par
+      </p>
+    </section>
+
+
+    <section class="">
+
+      <div class="row">
+
+
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-left:20%;">
+          <h5 class="text-uppercase">FAQ</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Nous contacter</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Questions frequentes</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Comment ça march?</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Pourquoi nous choisir?</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-left:10%;">
+          <h5 class="text-uppercase">Mentions légales</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Mentions légales</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Politique de confidentialité</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Conditions generales d'utilisation</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Conditions generales</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https site">site</a>
+  </div>
+
+</footer>
+<script  src="{% static 'js/newsletter.js'%}"></script>
+	</body>
+</html>

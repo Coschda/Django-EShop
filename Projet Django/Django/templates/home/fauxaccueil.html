@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+	<html>
+	<head>
+      <link rel="stylesheet" href="{% static 'ac_style.css' %}" />
+      <link rel="icon" type="image/jpg" sizes="16x16" href="{% static 'images/logo_large.jpg' %}">
+
+    <meta charset="UTF-8">
+		<title>Name</title>
+    <style>
+
+</style>
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+		</head>
+
+	<body>
+    <section class="page">
+     <nav>
+       <div id="bloc_page">
+          <img class="logo"src="{% static 'logo/logo_small_icon_only_inverted.png' %}" alt="Logo_page"></img></header>
+         </div>
+      <div class="onglets">
+        <a href="">Rechercher</a>
+        <a href="">Achats recents</a>
+        <a href="panier">Panier</a>
+      </div>
+
+      <div class="buttons">
+        <form>
+          {% if user.is_authenticated %}
+          <button class="register" formaction="deconnexion">Se déconnecter</button>
+          {% else %}
+          <button class="login" formaction="connexion">J'ai déjà un compte</button>
+          <button class="register" formaction="inscrire">S'enregistrer</button>
+          {% endif %}
+        </form>
+      </div>
+     </nav>
+		<header>
+      {% if user.is_authenticated %}
+      <h1>Bienvenue, {{user.username}} !</h1>
+      {% else %}
+      <h1>Contre les virus soignez-vous !</h1>
+      {% endif %}
+          <div id="log"></div>
+    </header>
+
+  </section>

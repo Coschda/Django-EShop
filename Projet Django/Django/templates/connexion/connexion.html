@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/connecter.css' %}">
+
+</head>
+
+<body>
+  {% for message in message %}
+    <h3 style="color:red;">Invalide</h3>
+  {% endfor %}
+  <form action="connexion" method="POST">
+    {% csrf_token %}
+    <div class="carre">
+      <div class="trucs">
+        <h2>Connectez-vous</h2>
+        <input class="texte" name="username" id="username" type="text" placeholder="Nom d'utilisateur"><br>
+        <input class="texte" name="password" id="password" type="password" placeholder="Mot de passe"><br>
+        <span>Pas de compte ? </span><a href="inscrire">Inscrivez-vous.</a><br>
+        <input id="connect" formaction="connexion" type="submit" value="CONNEXION">
+      </div>
+    </div>
+  </form>
+  <script src="{% static '\js\connecter.js' %}"></script>
+</body>
+</html>

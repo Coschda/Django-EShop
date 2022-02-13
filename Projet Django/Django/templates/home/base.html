@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE HTML5>
+	<html>
+	<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'images/logo_small_icon_only.png' %}" />
+    <!link rel="icon" type="image/jpg" href="{% static 'static/images/logo_large.jpg' %}">
+    <meta charset="UTF-8">
+		<title>Accueil</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		</head>
+
+	<body>
+    <section class="page">
+     <nav>
+       <div id="bloc_page">
+          <a href="/"><img class="logo"src="{% static 'images\logo_small_icon_only_inverted.png' %}" alt="Logo_page"></img></a>
+         </div>
+      <div class="onglets">
+        <a>Rechercher</a>
+        <a>Achats recents</a>
+        <a id="panier" href="panier">Panier</a>
+      </div>
+
+      <div class="buttons">
+        <form>
+          {% if user.is_authenticated %}
+          <button class="register" formaction="deconnexion">Logout</button>
+          {% else %}
+          <button formaction="connexion" class="login">Connectez-vous</button>
+          <button formaction="inscrire" class="register">Inscrivez-vous</button>
+          {% endif %}
+        </form>
+      </div>
+     </nav>
+		<header>
+      {% if user.is_authenticated %}
+      <h1>Bienvenue, {{user.username}} !</h1>
+      {% else %}
+      <h1>Contre les virus soignez-vous !</h1>
+      {% endif %}
+          <div id="log"></div>
+    </header>
+    </section>

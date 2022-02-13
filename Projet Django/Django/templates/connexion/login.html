@@ -1,0 +1,66 @@
+{% load static %}
+<!-- <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="{% static 'script.js' %}">
+  </head>
+  <body> -->
+    <!-- <h1>Conntectez-vous:</h1>  -->
+
+<!-- {% for message in messages %}
+<h3 id="error">{{message}}</h3>
+{% endfor %} -->
+
+<!-- <form action="connexion" method="POST" class="formfield">
+    {% csrf_token %}
+
+    <p class="inputfield">Nom d'utilisateur:</p>
+    <input type="text" name="username" class="inputfield"/>
+    <p class="inputfield">Mot de passe:</p>
+    <input type="password" name="password" class="inputfield"/><br>
+    <input type="submit" value="Connexion" class="inputfield"/> -->
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8">
+  <title>Registering</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="{% static 'login/login.css'%}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="signupSection">
+
+{% for message in messages %}
+<h4 id="error">{{message}}</h4>
+{% endfor %}
+
+  <form action="inscrire" method="POST" class="signupForm" name="signupform">
+      {% csrf_token %}
+    <h2>Connectez-vous</h2>
+    <ul class="noBullet">
+      <li>
+        <label for="username"></label>
+        <input type="text" class="inputFields" id="username" name="username" placeholder="Nom d'Utilisateur" value="" oninput="userNameValidation(this.value)" required/>
+      </li>
+      <li>
+        <label for="password"></label>
+        <input type="password" class="inputFields" id="password" name="password" placeholder="Mots de passe" value="" oninput="passwordValidation(this.value)" required/>
+      </li>
+      <li id="center-btn">
+        <input type="submit" id="join-btn" name="join" alt="Join" value="Connexion">
+      </li>
+    </ul>
+  </form>
+</div>
+<!-- partial -->
+  <script  src="{% static './script.js'%}"></script>
+
+</body>
+</html>

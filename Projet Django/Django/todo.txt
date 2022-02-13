@@ -1,0 +1,38 @@
+#A FAIRE:
+
+Mikaïl:
+
+- Connexions/HTML :
+    - Coder les achats et panier etc
+    - Faires toutes les templates FAQ / Mentions Légales
+    - Coder un mot de passe oublié
+
+- Connecter la newsletter à un truc de mail :
+    1) Vérifier validité du mail
+    2) Mail de confirmation
+    3) Rajouter mail à la liste
+    - Page gestion newsletters (où on peut envoyer n'importe quel mail) et perks (toutes les semaines, ce qui intéresse, que produits favoris etc)
+
+- Permissions Admin/Client/Staff :
+    - Coder roles/perms
+    - Coder page pour Staff ajouter articles/supprimer articles
+    - Refaire admin Django dans le site pour les Admins
+
+(- Réflechir à algorithme de recommendations)
+
+
+
+Yanis:
+
+- Arrêter de voler du code
+- Corriger le regex des mails qui marche pas (/templates/home/accueil.html)
+- Régler les pages incription et connexion, fais comme tu veux mais fais toi même sah et faut qu'elles se ressemblent, propre
+
+
+
+Camelia:
+
+- Aligner les textes en bas de la home page
+- Ajouter des sliders pour les 5 boutons de la home page 
+- Faire les pages d'articles et des articles individuels
+(Si possible faire un menu ≡ qui s'ouvre en déroulant sur la gauche avec du texte en mode catégories/tendances etc)
